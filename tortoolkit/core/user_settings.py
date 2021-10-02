@@ -29,7 +29,7 @@ no = "❌"
 yes = "✅"
 # Central object is not used its Acknowledged
 tordb = TorToolkitDB()
-header = '<u>USER SETTINGS MENU</u>'
+header = '<b>TurkLeech</b>\n<u>USER SETTINGS MENU - v1</u>'
 
 
 async def handle_user_setting_callback(e):

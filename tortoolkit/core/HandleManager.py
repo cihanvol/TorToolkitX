@@ -444,8 +444,7 @@ async def handle_resumeall_command(e):
 async def handle_settings_command(e):
     if await is_admin(e.client, e.sender_id, e.chat_id):
         await handle_settings(e)
-    else:
-        await e.delete()
+    await e.delete()
 
 
 async def handle_status_command(e):
@@ -457,10 +456,12 @@ async def handle_status_command(e):
             await get_status(e)
     else:
         await create_status_menu(e)
+    await e.delete()
 
 
 async def handle_u_status_command(e):
     await create_status_user_menu(e)
+    await e.delete()             
 
 
 async def speed_handler(e):
@@ -643,7 +644,7 @@ async def set_password_zip(message):
 
 
 async def start_handler(event):
-    msg = "@TurkLeech"
+    msg = "Hello This is TorToolkitX running on heroku an instance of <a href='https://github.com/XcodersHub/TorToolkitX'>This Repo</a>. Try the repo for yourself and dont forget to put a STAR and fork."
     await event.reply(msg, parse_mode="html")
 
 
@@ -897,6 +898,7 @@ async def handle_user_settings_(message):
             return
 
     await handle_user_settings(message)
+    await message.delete()
 
 
 def term_handler(signum, frame, client):
